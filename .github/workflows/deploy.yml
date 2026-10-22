@@ -1,0 +1,41 @@
+name: deploy insect-explorer
+
+# 昆蟲探險家（insects.hunglun.com）：Worker＋靜態網頁＋D1＋R2，push main 就自動部署。
+# 原始碼真正的家在 ClaudeOnly 的 school/lun-insects/，由 scripts/publish-public.sh 同步上來。
+# Actions secrets：CLOUDFLARE_API_TOKEN、CLOUDFLARE_ACCOUNT_ID（hunglun2026）。
+# Worker 執行期密鑰（NTFY_TOPIC、ADMIN_TOKEN）另外設定，不經過這裡。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-insect-explorer
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 安裝相依套件
+        run: npm ci && pip install zhconv
+      - name: 離線測試（整理規則、搜尋切詞）
+        run: npm test
+      - name: 套用資料庫 migration（已套用過的會自動略過）
+        run: npx wrangler d1 migrations apply insects-db --remote
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: 部署到 Cloudflare（hunglun2026）
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

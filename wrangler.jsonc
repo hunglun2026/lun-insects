@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "insect-explorer",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-01-01",
+  "observability": { "enabled": true },
+  // 網頁（public/）和 API 同一支 Worker：只有 /api/*、/admin/*、/img/600|240/* 先進程式，其他直接回靜態檔
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/admin/*", "/img/600/*", "/img/240/*"]
+  },
+  // remote: true＝本機 wrangler dev 時直接讀寫雲端的 D1／R2（部署不受影響）。
+  // 不用 wrangler dev --remote：Worker 第一次部署前，雲端預覽會一直回 internal error（2026-10-22）
+  "d1_databases": [
+    { "binding": "DB", "database_name": "insects-db", "database_id": "c7da28c0-9fe8-4e59-b4f9-475ae68a0a51", "remote": true }
+  ],
+  // 物種照片（iNaturalist 上 CC0／CC BY／CC BY-SA 的台灣觀察照片，本站縮成 600／240 webp）
+  "r2_buckets": [{ "binding": "IMG", "bucket_name": "insects-img", "remote": true }],
+  // 自訂網域：部署時 Cloudflare 自動建 DNS 與憑證（hunglun.com 在同一個帳號）
+  "routes": [{ "pattern": "insects.hunglun.com", "custom_domain": true }],
+  // 每月 1 日台灣 03:00（UTC 前一天 19:00）檢查 data.gov.tw 有沒有更新，有就 ntfy 通知（匯入在本機跑）
+  "triggers": { "crons": ["0 19 1 * *"] },
+  "vars": { "APP_VERSION": "0.1.0" }
+  // secrets（wrangler secret put）：NTFY_TOPIC、ADMIN_TOKEN
+}

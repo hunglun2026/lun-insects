@@ -1,0 +1,7 @@
+{
+  "_說明": "iNaturalist 與 TaiCOL 用不同學名（屬名不同或亞種歸屬不同）時，用這裡指定的 TaiCOL 學名去取中文名與保育資料。每筆都在 TaiCOL 查證過（2026-10-22）。鍵是 iNaturalist 物種編號。",
+  "145642": {"taicol": "Zizeeria maha", "why": "iNat 用 Pseudozizeeria maha（中國大陸名酢漿灰蝶）；TaiCOL 台灣族群是 Zizeeria maha 藍灰蝶"},
+  "1716211": {"taicol": "Orthetrum pruinosum", "why": "iNat 的 Orthetrum neglectum，TaiCOL 是 Orthetrum pruinosum neglectum 霜白蜻蜓中印亞種"},
+  "356313": {"taicol": "Aegus formosae", "why": "iNat 的 Aegus laevicollis，TaiCOL 台灣族群為 Aegus formosae 臺灣肥角鍬形蟲"},
+  "1475918": {"taicol": "Papilio nephelus chaonulus", "why": "iNat 的 Papilio chaon（中國大陸名寬帶鳳蝶），TaiCOL 台灣亞種為大白紋鳳蝶"}
+}

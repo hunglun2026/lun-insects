@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>昆蟲探險家｜台灣昆蟲教學網站</title>
+<meta name="description" content="用林業試驗所昆蟲標本館開放資料、臺灣物種名錄與 iNaturalist 觀察照片做的教學網站：認識台灣常見昆蟲、猜名字、分類闖關、變態排排站、標本館探究、印學習單。國小到高中三種難度，免註冊、免安裝。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body data-page="home" class="welcome">
+<main>
+  <section class="w-hero">
+    <div class="w-floats" aria-hidden="true"><span>🦋</span><span>🐞</span><span>🐝</span><span>🦗</span><span>🪲</span><span>🌿</span><span>🐜</span><span>🌼</span></div>
+    <p class="w-eyebrow"><span>林試所標本館・臺灣物種名錄・iNaturalist</span><span class="w-sep">·</span><span>國小到高中</span></p>
+    <h1 class="w-title"><span class="w-line">走進台灣的</span><span class="w-line w-grad">昆蟲世界</span><span class="w-line">等你來探險</span></h1>
+    <p class="w-sub">認昆蟲、猜名字、排出昆蟲的一生、查標本館。<br>不用註冊、不用安裝，打開就能上課。</p>
+    <p class="w-cta-row"><a class="btn primary big" href="#start" data-pick="student">🎒 我是學生</a> <a class="btn primary big" href="#start" data-pick="teacher">🍎 我是老師</a> <a class="btn big" href="/help">📘 使用說明</a></p>
+    <a class="w-hint" href="#tour">↓ 向下滑動，看看可以玩什麼</a>
+  </section>
+
+  <!-- 引導入口：回答兩題（身分、年級），推薦從哪裡開始。程式在 p-home.js，選過的會記在這台裝置 -->
+  <section class="w-guide" id="start" aria-labelledby="g-title">
+    <h2 id="g-title"><span class="nobr">不知道從哪裡開始？</span><span class="nobr">回答兩個問題</span></h2>
+    <p class="lead"><span class="nobr">選完會推薦最適合的工具，</span><span class="nobr">難度也會自動設好。</span></p>
+    <div class="g-step" data-step="who">
+      <p class="g-q"><small>第 1 題，共 2 題</small>你是…</p>
+      <div class="g-opts">
+        <button class="g-opt" type="button" data-who="student"><span class="e" aria-hidden="true">🎒</span><b>學生</b><small>自己看昆蟲、玩遊戲、蒐集徽章</small></button>
+        <button class="g-opt" type="button" data-who="teacher"><span class="e" aria-hidden="true">🍎</span><b>老師</b><small>上課投影、印學習單、全班搶答</small></button>
+      </div>
+    </div>
+    <div class="g-step" data-step="lv" hidden>
+      <p class="g-q"><small>第 2 題，共 2 題</small><span id="g-lvq">你幾年級？</span></p>
+      <div class="g-opts">
+        <button class="g-opt" type="button" data-lv="e"><span class="e" aria-hidden="true">🌱</span><b>國小</b><small>三選一，附白話介紹，都是最常見的昆蟲</small></button>
+        <button class="g-opt" type="button" data-lv="j"><span class="e" aria-hidden="true">📗</span><b>國中</b><small>四選一，學會「目」的名稱</small></button>
+        <button class="g-opt" type="button" data-lv="s"><span class="e" aria-hidden="true">🎓</span><b>高中</b><small>同一科的昆蟲來比，用資料做探究</small></button>
+      </div>
+      <div class="g-nav"><button class="btn" type="button" data-back>← 上一步</button></div>
+    </div>
+    <div class="g-step" data-step="done" hidden>
+      <p class="g-q"><small>推薦給你</small><span class="g-who" id="g-who"></span></p>
+      <div class="cards g-recs" id="g-recs"></div>
+      <div class="g-nav"><button class="btn" type="button" data-reset>重新選擇</button> <a class="btn" href="/help">📘 看使用說明</a></div>
+    </div>
+  </section>
+
+  <!-- 捲動放大切換：畫面固定，往下捲時一個個展示框放大淡出換下一個（動畫在 p-home.js）。
+       照片在資料載入後，從 data-ord 那一目最常見的昆蟲挑（p-home.js 的 fillTour） -->
+  <section class="w-tour" id="tour" aria-label="學習工具介紹">
+    <div class="w-tour-sticky">
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">01 / 08 · 觀察與認識</span><h2>昆蟲小百科</h2><p>台灣常見昆蟲的照片、中文名和台語名，還有幾月看得到、是不是特有種。國小、國中附白話介紹。</p><a class="btn primary" href="/sp">打開小百科 →</a></div>
+        <figure class="w-case" data-ord="Lepidoptera"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">02 / 08 · 觀察與推理</span><h2>猜猜我是誰</h2><p>看照片猜昆蟲的名字。國小三選一，高中的選項都是同一科、長得很像的昆蟲。還有 60 秒挑戰。</p><a class="btn primary" href="/guess">來猜猜看 →</a></div>
+        <figure class="w-case" data-ord="Coleoptera"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">03 / 08 · 比較與歸納</span><h2>分類闖關</h2><p>甲蟲、蝴蝶和蛾、蜂和螞蟻、蜻蜓……看翅膀和身體分出牠屬於哪一目。</p><a class="btn primary" href="/classify">開始闖關 →</a></div>
+        <figure class="w-case" data-ord="Odonata"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">04 / 08 · 辨別特徵</span><h2>是不是昆蟲</h2><p>蜘蛛、蜈蚣、馬陸是昆蟲嗎？數數腳、找找觸角，學會分辨的方法。</p><a class="btn primary" href="/isinsect">挑戰看看 →</a></div>
+        <figure class="w-case" data-ord="_other"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">05 / 08 · 生命週期</span><h2>變態排排站</h2><p>把同一種昆蟲的卵、幼蟲、蛹、成蟲照片依順序排好，分辨完全變態和不完全變態。</p><a class="btn primary" href="/stages">排排看 →</a></div>
+        <figure class="w-case" data-ord="Hemiptera"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">06 / 08 · 季節與環境</span><h2>幾月看得到</h2><p>每個月最常被看到的昆蟲是哪些？出門觀察前先查一查。</p><a class="btn primary" href="/months">查查這個月 →</a></div>
+        <figure class="w-case" data-ord="Orthoptera"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">07 / 08 · 資料探究</span><h2>標本館探究</h2><p>林業試驗所 14.8 萬筆標本：在哪裡採到、哪個年代、哪些昆蟲最多。適合國中、高中。</p><a class="btn primary" href="/museum">打開標本櫃 →</a></div>
+        <figure class="w-case" data-ord="Hymenoptera"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-panel"><div class="w-panel-text"><span class="w-tag">08 / 08 · 表達與發表</span><h2>我的小圖鑑</h2><p>挑喜歡的昆蟲、寫觀察筆記，可以列印，也能全螢幕投影上台發表。</p><a class="btn primary" href="/book">做一本圖鑑 →</a></div>
+        <figure class="w-case" data-ord="Mantodea"><img alt="" width="600" height="450"><figcaption></figcaption></figure></div>
+      <div class="w-dots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="w-stats" aria-label="收錄數量">
+    <div class="w-stat w-reveal"><b class="w-num" data-w="insects">1000</b><span>種台灣昆蟲</span></div>
+    <div class="w-stat w-reveal" style="--delay:1"><b class="w-num" data-w="specimens">147732</b><span>筆標本紀錄</span></div>
+    <div class="w-stat w-reveal" style="--delay:2"><b class="w-num" data-w="orders">20</b><span>個目</span></div>
+    <div class="w-stat w-reveal" style="--delay:3"><b class="w-num" data-w="endemic">100</b><span>種台灣特有種</span></div>
+  </section>
+
+  <h2 class="w-reveal">今天的昆蟲盒</h2>
+  <p class="lead">每次打開都會換一批，點一下看介紹。</p>
+  <div class="grid" id="today"></div>
+
+  <h2 class="w-reveal">十二個學習工具</h2>
+  <div class="cards">
+    <a class="tool w-reveal" href="/sp"><div class="ico">📖</div><h3>昆蟲小百科</h3><p>照片、中文名、台語名、分類、幾月看得到，國小國中附白話介紹。</p><span class="tag">觀察與認識</span></a>
+    <a class="tool w-reveal" style="--delay:1" href="/search"><div class="ico">🔎</div><h3>搜尋</h3><p>用中文名、台語名、學名找昆蟲，也能查 14.8 萬筆標本。</p><span class="tag">查找資料</span></a>
+    <a class="tool w-reveal" style="--delay:2" href="/guess"><div class="ico">🔍</div><h3>猜猜我是誰</h3><p>看照片猜名字，高中的選項都是長得很像的昆蟲。</p><span class="tag">觀察與推理</span></a>
+    <a class="tool w-reveal" style="--delay:3" href="/classify"><div class="ico">🧩</div><h3>分類闖關</h3><p>看翅膀和身體，分出昆蟲屬於哪一目。</p><span class="tag">比較與歸納</span></a>
+    <a class="tool w-reveal" href="/isinsect"><div class="ico">🕷️</div><h3>是不是昆蟲</h3><p>蜘蛛、蜈蚣、馬陸是昆蟲嗎？學會分辨。</p><span class="tag">辨別特徵</span></a>
+    <a class="tool w-reveal" style="--delay:1" href="/memory"><div class="ico">🃏</div><h3>翻牌配對</h3><p>昆蟲照片配名字，高中整盤同一目更難。</p><span class="tag">觀察與記憶</span></a>
+    <a class="tool w-reveal" style="--delay:2" href="/stages"><div class="ico">🦋</div><h3>變態排排站</h3><p>排出卵、幼蟲、蛹、成蟲的順序。</p><span class="tag">生命週期</span></a>
+    <a class="tool w-reveal" style="--delay:3" href="/months"><div class="ico">📅</div><h3>幾月看得到</h3><p>每個月最常被看到的昆蟲，規劃戶外觀察。</p><span class="tag">季節與環境</span></a>
+    <a class="tool w-reveal" href="/museum"><div class="ico">🗄️</div><h3>標本館探究</h3><p>標本採自哪裡、哪個年代，用地圖和長條圖探究。</p><span class="tag">資料探究</span></a>
+    <a class="tool w-reveal" style="--delay:1" href="/book"><div class="ico">📚</div><h3>我的小圖鑑</h3><p>挑昆蟲、寫觀察筆記，列印或投影發表。</p><span class="tag">表達與發表</span></a>
+    <a class="tool w-reveal" style="--delay:2" href="/passport"><div class="ico">🎫</div><h3>探險護照</h3><p>看過的昆蟲會蓋章，玩遊戲拿星星換徽章。</p><span class="tag">自主學習</span></a>
+    <a class="tool w-reveal" style="--delay:3" href="/teacher"><div class="ico">🍎</div><h3>老師專區</h3><p>四個課程包、一鍵產生學習單、出題投影、搶答計分板。</p><span class="tag">備課好幫手</span></a>
+  </div>
+
+  <h2 class="w-reveal">老師 3 分鐘上手</h2>
+  <div class="panel w-reveal">
+    <ol class="steps">
+      <li><div><b>先在右上角選難度</b>：國小、國中、高中，所有遊戲和學習單都會跟著換。</div></li>
+      <li><div><b>投影「是不是昆蟲」或「猜猜我是誰」</b>，全班一起看、舉手搶答，不需要每人一台裝置。</div></li>
+      <li><div><b>到「老師專區」挑一個課程包</b>，按一下就產生可列印的學習單和答案。</div></li>
+    </ol>
+    <p class="lead">第一次使用？<a href="/help">看完整使用說明</a>，有每個工具的畫面與步驟。</p>
+    <p class="lead" style="margin-bottom:0">學生用平板或電腦也能自己玩，進度只存在自己的裝置，不蒐集任何個人資料。</p>
+  </div>
+
+  <section class="w-end w-reveal">
+    <h2>準備好出發了嗎？</h2>
+    <p class="lead">從一隻你最喜歡的昆蟲開始。</p>
+    <p><a class="btn primary big" href="/sp">開始探險 🐞</a> <a class="btn big" href="/guess">先猜一隻</a></p>
+  </section>
+</main>
+<noscript><p style="text-align:center">需要開啟 JavaScript 才能使用互動功能。</p></noscript>
+<script src="/js/data.js?v=1"></script>
+<script src="/js/layout.js?v=1"></script>
+<script src="/js/fx.js?v=1"></script>
+<script src="/js/p-home.js?v=1"></script>
+</body>
+</html>

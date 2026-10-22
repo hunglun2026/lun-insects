@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>標本館探究｜昆蟲探險家</title>
+<meta name="description" content="用林業試驗所昆蟲標本館 14.8 萬筆標本紀錄做探究：在哪裡採集、哪個年代、哪些昆蟲最多。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body data-page="museum">
+<main>
+  <h1>🗄️ 標本館探究</h1>
+  <p class="lead">林業試驗所昆蟲標本館的 14.8 萬筆標本紀錄：在哪裡採到、哪一年採到、採到哪些昆蟲。選主題或輸入關鍵字開始探究。</p>
+  <form id="f" class="form-row" role="search"><label style="flex:1">關鍵字（中文名、學名、地名、採集者）<input type="search" id="q" placeholder="例如：虎頭蜂、福山、Vespa"></label><button class="btn primary">查詢</button></form>
+  <div class="chips" id="topics" style="margin:10px 0"></div>
+  <div id="out"></div>
+</main>
+<script src="/js/data.js?v=1"></script>
+<script src="/js/layout.js?v=1"></script>
+<script src="/js/fx.js?v=1"></script>
+<script src="/js/p-museum.js?v=1"></script>
+</body>
+</html>

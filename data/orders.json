@@ -1,0 +1,31 @@
+{
+  "_說明": "昆蟲各目的唯一資料來源：tools/normalize.py 讀它判斷目名，build_sql.py 寫進 D1 meta，前端從 /api/meta 拿（Mu.ORDERS）。meta：full 完全變態、half 不完全變態、none 無變態。lv：最早在哪個難度出現在分類闖關（e 國小、j 國中、s 高中、空字串＝不考）。",
+  "orders": [
+    {"id": "Coleoptera", "zh": "鞘翅目", "folk": "甲蟲", "emoji": "🪲", "meta": "full", "lv": "e", "hint": "前翅變成硬殼，像盔甲一樣蓋住後翅和身體"},
+    {"id": "Lepidoptera", "zh": "鱗翅目", "folk": "蝴蝶和蛾", "emoji": "🦋", "meta": "full", "lv": "e", "hint": "翅膀上蓋滿細細的鱗片，摸了會掉粉"},
+    {"id": "Hymenoptera", "zh": "膜翅目", "folk": "蜂和螞蟻", "emoji": "🐝", "meta": "full", "lv": "e", "hint": "有兩對透明的薄翅膀，很多種類有細細的腰"},
+    {"id": "Odonata", "zh": "蜻蛉目", "folk": "蜻蜓和豆娘", "emoji": "🪽", "meta": "half", "lv": "e", "hint": "眼睛很大、肚子細長，小時候住在水裡"},
+    {"id": "Orthoptera", "zh": "直翅目", "folk": "蝗蟲、蟋蟀和螽斯", "emoji": "🦗", "meta": "half", "lv": "e", "hint": "後腳又粗又長，很會跳，很多種類會鳴叫"},
+    {"id": "Hemiptera", "zh": "半翅目", "folk": "椿象、蟬和蚜蟲", "emoji": "🧃", "meta": "half", "lv": "e", "hint": "嘴巴像吸管，用來吸植物的汁液或其他動物的體液"},
+    {"id": "Diptera", "zh": "雙翅目", "folk": "蒼蠅和蚊子", "emoji": "🪰", "meta": "full", "lv": "j", "hint": "只有一對翅膀，後翅退化成小小的平衡棒"},
+    {"id": "Mantodea", "zh": "螳螂目", "folk": "螳螂", "emoji": "🙏", "meta": "half", "lv": "j", "hint": "前腳像鐮刀，用來抓其他小蟲"},
+    {"id": "Phasmida", "zh": "竹節蟲目", "folk": "竹節蟲", "emoji": "🌿", "meta": "half", "lv": "j", "hint": "身體細長像樹枝或樹葉，很會偽裝"},
+    {"id": "Blattodea", "zh": "蜚蠊目", "folk": "蟑螂和白蟻", "emoji": "🪳", "meta": "half", "lv": "j", "hint": "身體扁平、跑得很快；白蟻也屬於這一目"},
+    {"id": "Neuroptera", "zh": "脈翅目", "folk": "草蛉和蟻蛉", "emoji": "🕸️", "meta": "full", "lv": "j", "hint": "翅膀上的細脈很多，像一張網"},
+    {"id": "Dermaptera", "zh": "革翅目", "folk": "蠼螋", "emoji": "✂️", "meta": "half", "lv": "j", "hint": "尾巴末端有一對像夾子的尾鋏"},
+    {"id": "Trichoptera", "zh": "毛翅目", "folk": "石蛾", "emoji": "🏠", "meta": "full", "lv": "s", "hint": "翅膀上有細毛，幼蟲住在水裡，會用小石頭或葉片做巢"},
+    {"id": "Ephemeroptera", "zh": "蜉蝣目", "folk": "蜉蝣", "emoji": "🌫️", "meta": "half", "lv": "s", "hint": "成蟲活不久，尾巴有兩到三根長絲；幼蟲住在溪流裡"},
+    {"id": "Plecoptera", "zh": "襀翅目", "folk": "石蠅", "emoji": "🪨", "meta": "half", "lv": "s", "hint": "幼蟲住在乾淨的溪流裡，成蟲翅膀平平疊在背上"},
+    {"id": "Megaloptera", "zh": "廣翅目", "folk": "魚蛉和泥蛉", "emoji": "🌊", "meta": "full", "lv": "s", "hint": "翅膀又大又寬，幼蟲住在溪流裡"},
+    {"id": "Mecoptera", "zh": "長翅目", "folk": "蠍蛉", "emoji": "🦂", "meta": "full", "lv": "s", "hint": "頭部往下延長，像一個長長的嘴"},
+    {"id": "Psocodea", "zh": "嚙蟲目", "folk": "嚙蟲和蝨子", "emoji": "🔍", "meta": "half", "lv": "", "hint": "身體很小，有的住在樹皮上，有的寄生在動物身上"},
+    {"id": "Thysanoptera", "zh": "纓翅目", "folk": "薊馬", "emoji": "🔍", "meta": "half", "lv": "", "hint": "身體非常小，翅膀邊緣有一圈長毛"},
+    {"id": "Siphonaptera", "zh": "蚤目", "folk": "跳蚤", "emoji": "🔍", "meta": "full", "lv": "", "hint": "沒有翅膀、身體左右扁扁的，很會跳"},
+    {"id": "Raphidioptera", "zh": "蛇蛉目", "folk": "蛇蛉", "emoji": "🐍", "meta": "full", "lv": "", "hint": "前胸很長，看起來像蛇的脖子"},
+    {"id": "Zygentoma", "zh": "衣魚目", "folk": "衣魚", "emoji": "🐟", "meta": "none", "lv": "s", "hint": "沒有翅膀，身上有銀灰色的鱗片，常躲在書本和衣櫃裡"},
+    {"id": "Archaeognatha", "zh": "石蛃目", "folk": "石蛃", "emoji": "🪨", "meta": "none", "lv": "", "hint": "沒有翅膀，背部拱起，尾巴有三根長絲"},
+    {"id": "Embioptera", "zh": "紡足目", "folk": "足絲蟻", "emoji": "🧵", "meta": "half", "lv": "", "hint": "前腳可以吐絲，住在自己織的絲道裡"}
+  ],
+  "_舊目名": "標本館用舊分類：同翅目（HOMOPTERA）已併入半翅目，PSOCOPTERA 是嚙蟲目的舊名。",
+  "alias": {"Homoptera": "Hemiptera", "Psocoptera": "Psocodea", "Phasmatodea": "Phasmida", "Isoptera": "Blattodea", "Thysanura": "Zygentoma"}
+}

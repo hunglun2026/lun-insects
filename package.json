@@ -1,0 +1,16 @@
+{
+  "name": "lun-insects",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8813",
+    "db:local": "wrangler d1 migrations apply insects-db --local",
+    "test": "node --experimental-strip-types tests/test-tokens.ts && python -X utf8 tests/test_tools.py"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5",
+    "typescript": "^7.0.2",
+    "wrangler": "^4"
+  }
+}

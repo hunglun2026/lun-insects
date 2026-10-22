@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>搜尋｜昆蟲探險家</title>
+<meta name="description" content="用中文名、台語名、學名搜尋台灣昆蟲，也能查林業試驗所昆蟲標本館的 14.8 萬筆標本紀錄。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body data-page="search">
+<main>
+  <h1>🔎 搜尋</h1>
+  <p class="lead">昆蟲 <b data-stat="insects">1,000</b> 種、林試所標本 <b data-stat="specimens">147,732</b> 筆，打中文名、台語名、學名或地名都可以。</p>
+  <div class="tabs" role="tablist" aria-label="搜尋範圍">
+    <button class="tab" role="tab" aria-selected="true" data-t="sp">🐞 昆蟲</button>
+    <button class="tab" role="tab" aria-selected="false" data-t="spec">🗄️ 標本</button>
+  </div>
+  <form class="form-row" id="f" role="search">
+    <label style="flex:1">關鍵字<input type="search" id="q" placeholder="例如：獨角仙、金龜、鳳蝶" autocomplete="off"></label>
+    <button class="btn primary">搜尋</button>
+  </form>
+  <p class="chips" id="hot"></p>
+  <p class="count" id="count" role="status" aria-live="polite"></p>
+  <div id="out"></div>
+  <p class="more"><button class="btn" id="more" hidden>載入更多</button></p>
+</main>
+<script src="/js/data.js?v=1"></script>
+<script src="/js/layout.js?v=1"></script>
+<script src="/js/fx.js?v=1"></script>
+<script src="/js/p-search.js?v=1"></script>
+</body>
+</html>
