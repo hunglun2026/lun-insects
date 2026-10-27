@@ -36,8 +36,7 @@
   foot.className = "foot";
   foot.innerHTML =
     "<div class=\"foot-brand\"><img src=\"/img/hunglun-logo.webp\" alt=\"鴻綸科技\" width=\"156\" height=\"56\"></div>" +
-    "<p class=\"foot-links\"><a href=\"/open-data\">資料開放宣告</a><a href=\"/privacy\">隱私權及資訊安全政策</a></p>" +
-    "<p class=\"foot-copy\">本站資料由政府單位開放資料取得，鴻綸科技利用這些資料製作本站。本站程式、介面設計與整理編排 © 2026 鴻綸科技股份有限公司 版權所有，未經書面同意，不得轉載、複製、改作或仿製。</p>" +
+    "<p class=\"foot-copy\">本站資料主要為政府單位開放資料，資料版權屬原資料提供單位，由鴻綸科技整理製作。本站程式、介面設計與整理編排 © 2026 鴻綸科技股份有限公司 版權所有，未經書面同意，不得轉載、複製、改作或仿製。</p>" +
     '<p id="data-stamp" hidden></p>';
   wrap.appendChild(foot);
 
