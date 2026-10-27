@@ -493,5 +493,5 @@ header.top nav a{padding:5px 8px;font-size:.85rem}
 
 /* 頁尾：淺色條（Logo、版權宣告），由 gen_footer.py 加入 */
 footer.foot{margin-top:40px;padding:24px 16px 26px;background:#f3f1ec;color:#4b5057;text-align:center;border:1px solid #e4dfd3;border-radius:14px;font-size:.85rem}
-footer.foot .foot-brand img{height:64px;width:auto;max-width:100%}
+footer.foot .foot-brand img{height:56px;width:auto;max-width:100%}
 footer.foot .foot-copy{margin:.8em auto 0;max-width:48em;line-height:1.7;color:#4b5057}
