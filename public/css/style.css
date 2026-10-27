@@ -491,12 +491,7 @@ header.top nav a{padding:5px 8px;font-size:.85rem}
 /* 照片下的作者標示（遊戲、投影） */
 #pic .credit{margin:4px 0 0}
 
-/* 頁尾：深色條（Logo、說明頁連結、版權），由 gen_footer.py 加入 */
-footer.foot{margin-top:40px;padding:22px 16px 26px;background:#23272b;color:#e8eaed;text-align:center;border-top:0;border-radius:14px;font-size:.85rem}
-footer.foot .foot-brand img{height:56px;width:auto;max-width:100%}
-footer.foot .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;margin:14px 0 8px}
-footer.foot .foot-links a{color:#fff;text-decoration:none;padding:0 16px;border-left:1px solid rgba(255,255,255,.5);line-height:1.2}
-footer.foot .foot-links a:first-child{border-left:0}
-footer.foot .foot-links a:hover{text-decoration:underline}
-footer.foot .foot-copy{margin:.5em auto 0;max-width:48em;line-height:1.7;color:#c9ced4}
-footer.foot .foot-copy a{color:#fff}
+/* 頁尾：淺色條（Logo、版權宣告），由 gen_footer.py 加入 */
+footer.foot{margin-top:40px;padding:24px 16px 26px;background:#f3f1ec;color:#4b5057;text-align:center;border:1px solid #e4dfd3;border-radius:14px;font-size:.85rem}
+footer.foot .foot-brand img{height:64px;width:auto;max-width:100%}
+footer.foot .foot-copy{margin:.8em auto 0;max-width:48em;line-height:1.7;color:#4b5057}
