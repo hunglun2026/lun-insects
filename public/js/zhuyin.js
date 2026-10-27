@@ -49,7 +49,7 @@
   // 把 .zy 裡的每個文字節點換成注音；原文記在 data-t，拿掉注音時換回來
   function addTo(root) {
     const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-      acceptNode: (n) => (CJK.test(n.nodeValue) && !n.parentElement.closest(".zyw,rt,button.spk,select,option,textarea,script,style,svg,canvas,.nozy") ? 1 : 3),
+      acceptNode: (n) => (CJK.test(n.nodeValue) && !n.parentElement.closest(".zyw,rt,button.spk,select,option,textarea,script,style,svg,canvas,.nozy,.w-tour,.w-credit") ? 1 : 3),
     });
     const nodes = [];
     while (walk.nextNode()) nodes.push(walk.currentNode);
