@@ -7,13 +7,12 @@
     ["guess", "猜我是誰", "/guess"],
     ["classify", "分類闖關", "/classify"],
     ["isinsect", "是不是昆蟲", "/isinsect"],
-    ["memory", "翻牌", "/memory"],
     ["stages", "變態排排站", "/stages"],
     ["months", "幾月看得到", "/months"],
     ["museum", "標本館", "/museum"],
     ["book", "小圖鑑", "/book"],
     ["passport", "護照", "/passport"],
-    ["teacher", "老師專區", "/teacher"],
+    ["teacher", "教師專區", "/teacher"],
     ["help", "使用說明", "/help"],
   ];
   const page = document.body.dataset.page || "";

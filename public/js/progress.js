@@ -23,7 +23,7 @@ window.Progress = (function () {
   // 各遊戲在護照上顯示的名字（key 要跟各遊戲存星數用的一樣；難度另外記，例如 guess-e）
   const GAMES = [
     ["guess", "猜猜我是誰"], ["guess-timed", "猜我是誰・60 秒"], ["classify", "分類闖關"], ["classify-timed", "分類闖關・60 秒"],
-    ["isinsect", "是不是昆蟲"], ["memory", "翻牌配對"], ["stages", "變態排排站"],
+    ["isinsect", "是不是昆蟲"], ["stages", "變態排排站"],
   ];
   const LV = { e: "國小", j: "國中", s: "高中" };
 
@@ -51,7 +51,6 @@ window.Progress = (function () {
       ["🧩", "分類達人", "分類闖關拿到三顆星", st("classify") >= 3],
       ["🕷️", "火眼金睛", "是不是昆蟲拿到三顆星", st("isinsect") >= 3],
       ["🦋", "變態專家", "變態排排站拿到三顆星", st("stages") >= 3],
-      ["🃏", "過目不忘", "翻牌配對拿到三顆星", st("memory") >= 3],
       ["⚡", "閃電快手", "任一個 60 秒挑戰拿到三顆星", st("guess-timed") >= 3 || st("classify-timed") >= 3],
       ["📚", "小小圖鑑作家", "我的小圖鑑放了 5 種以上，而且每種都寫了觀察筆記", bookDone()],
       ["🎓", "高中挑戰者", "用高中難度在任一遊戲拿到三顆星", GAMES.some(([k]) => stLv(k, "s") >= 3)],

@@ -109,7 +109,7 @@ dialog::backdrop{background:rgba(20,28,16,.6)}
 .rung{display:flex;align-items:center;gap:12px;border-radius:14px;padding:10px 14px;color:#fff;font-weight:800;cursor:pointer;border:none;font:inherit;text-align:left;width:100%}
 .rung span{margin-left:auto;font-size:.85rem;opacity:.95}
 
-/* 老師專區 */
+/* 教師專區 */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .tab{font:inherit;font-weight:800;border:3px solid var(--line);background:#fff;border-radius:14px 14px 0 0;padding:8px 20px;cursor:pointer;min-height:48px}
 .tab[aria-selected="true"]{background:var(--green);color:#fff;border-color:var(--green)}

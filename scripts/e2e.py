@@ -208,7 +208,7 @@ def main():
         pg.locator(".show #cl").click()
         check(rows >= 2 and "六隻腳" in kept and pg_no.startswith("2"), f"小圖鑑：{rows} 種、筆記重新整理後還在、投影第 {pg_no}")
 
-        # 老師專區：學習單、課程包
+        # 教師專區：學習單、課程包
         pg.goto(base + "/teacher?cb=" + cb); ready(pg)
         pg.click("#gen"); pg.wait_for_selector("#sheet .q", timeout=30000); pg.wait_for_timeout(2000)
         qn = pg.locator("#sheet .q").count()
@@ -220,7 +220,7 @@ def main():
         mq = pg.evaluate("[...document.querySelectorAll('#sheet .q')].filter(q=>q.textContent.includes('變態')).length")
         check(pg.eval_on_selector("#lvl", "e=>e.value") == "j" and mq >= 10, f"昆蟲的一生課程包：難度國中、{mq} 題變態題")
         pg.goto(base + "/teacher?cb=" + cb + "#guide"); ready(pg)
-        check(pg.locator("#tab-guide").is_visible(), "老師專區 #guide 直接打開課程包")
+        check(pg.locator("#tab-guide").is_visible(), "教師專區 #guide 直接打開課程包")
 
         # 使用說明：截圖全部載入、目錄連結都對得到
         pg.goto(base + "/help?cb=" + cb); ready(pg)
