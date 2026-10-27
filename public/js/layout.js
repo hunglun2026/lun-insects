@@ -35,7 +35,9 @@
   const foot = document.createElement("footer");
   foot.className = "foot";
   foot.innerHTML =
-    "<p>由政府資料獲取</p>" +
+    "<div class=\"foot-brand\"><img src=\"/img/hunglun-logo.webp\" alt=\"鴻綸科技\" width=\"156\" height=\"56\"></div>" +
+    "<p class=\"foot-links\"><a href=\"/open-data\">資料開放宣告</a><a href=\"/privacy\">隱私權及資訊安全政策</a></p>" +
+    "<p class=\"foot-copy\">© 2026 鴻綸科技股份有限公司 版權所有。本站由鴻綸科技製作，不是政府機關網站；未經書面同意，不得轉載、複製、改作或仿製本站。資料由政府資料獲取。</p>" +
     '<p id="data-stamp" hidden></p>';
   wrap.appendChild(foot);
 
