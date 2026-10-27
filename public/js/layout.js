@@ -18,7 +18,7 @@
   wrap.innerHTML =
     '<header class="top"><a class="logo" href="/">🐞 昆蟲探險家</a><nav aria-label="主選單">' +
     NAV.map((n) => '<a href="' + n[2] + '"' + (n[0] === page ? ' aria-current="page"' : "") + ">" + n[1] + "</a>").join("") +
-    '</nav><label class="lvl">難度<select id="lvl" aria-label="題目難度">' +
+    '</nav><label class="lvl">年級<select id="lvl" aria-label="年級">' +
     Object.entries(Mu.LEVELS).map(([k, v]) => '<option value="' + k + '"' + (k === lv ? " selected" : "") + ">" + v.name + "</option>").join("") +
     "</select></label></header>";
   wrap.appendChild(main);

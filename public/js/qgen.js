@@ -10,7 +10,7 @@
   const KINDS = {
     name: { name: "看照片選名字", ok: (it) => it.kind === "insect" },
     order: { name: "屬於哪一類（目）", ok: (it, lv) => it.kind === "insect" && Mu.ordersFor(lv).some((o) => o.id === it.ord) },
-    meta: { name: "完全還是不完全變態", ok: (it, lv) => it.kind === "insect" && !!it.ordInfo && (it.ordInfo.meta !== "none" || lv === "s") },
+    meta: { name: "完全還是不完全變態", ok: (it, lv) => it.kind === "insect" && !!it.ordInfo && (it.ordInfo.meta !== "none" || lv === "__off__") },
     insect: { name: "是不是昆蟲", ok: () => true },
   };
 
@@ -19,7 +19,7 @@
     const k = Mu.LEVELS[lv].choices - 1;
     const ins = pool.filter((x) => x.kind === "insect" && x.id !== it.id && x.name !== it.name);
     const tiers = lv === "e" ? [ins.filter((x) => x.ord !== it.ord), ins]
-      : lv === "j" ? [ins.filter((x) => x.ord === it.ord), ins]
+      : (lv === "j" || lv === "__off__") ? [ins.filter((x) => x.ord === it.ord), ins]
         : [ins.filter((x) => x.fam && x.fam === it.fam), ins.filter((x) => x.ord === it.ord), ins];
     const names = new Set([it.name]);
     for (const tier of tiers) for (const x of shuffle(tier)) { if (names.size > k) break; names.add(x.name); }
@@ -32,7 +32,7 @@
   function orderChoices(ord, lv) {
     const k = Mu.LEVELS[lv].choices - 1;
     let others = shuffle(Mu.ordersFor(lv).map((o) => o.id).filter((o) => o !== ord));
-    if (lv === "s") {
+    if (lv === "__off__") {
       const near = new Set(CONFUSE.filter((g) => g.includes(ord)).flat());
       others = others.filter((o) => near.has(o)).concat(others.filter((o) => !near.has(o)));
     }
@@ -51,7 +51,7 @@
         explain: "牠是「" + esc(it.name) + "」，屬於" + esc(o.zh) + "（" + esc(o.folk) + "）：" + esc(o.hint) + "。" };
     }
     if (kind === "meta") {
-      const types = lv === "s" ? ["full", "half", "none"] : ["full", "half"];
+      const types = lv === "__off__" ? ["full", "half", "none"] : ["full", "half"];
       const mt = Mu.META_TYPE[o.meta];
       return { q: "「" + it.name + "」的一生是哪一種？", choices: types.map((t) => Mu.META_TYPE[t].name), answer: mt.name,
         explain: esc(o.zh) + "（" + esc(o.folk) + "）是" + esc(mt.name) + "：" + esc(mt.steps.join("→")) + "。" + esc(mt.hint) + "。" };

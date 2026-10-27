@@ -133,7 +133,7 @@
       const lv = Mu.level();
       document.getElementById("intro").textContent = cfg.intro[lv];
       root.replaceChildren(el(
-        '<div class="stage"><h2>目前難度：' + esc(Mu.LEVELS[lv].name) + "</h2><p>可以在右上角換難度。</p>" +
+        '<div class="stage"><h2>目前年級：' + esc(Mu.LEVELS[lv].name) + "</h2><p>可以在右上角換年級。</p>" +
         '<p><button class="btn primary big" id="go10">開始（10 題）</button>' + (cfg.timed ? ' <button class="btn big" id="go60">⏱️ 60 秒挑戰</button>' : "") + "</p></div>"
       ));
       root.querySelector("#go10").onclick = () => start(false);

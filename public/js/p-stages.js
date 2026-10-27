@@ -22,7 +22,7 @@ Mu.boot(async function () {
     const lv = Mu.level();
     document.getElementById("intro").textContent = INTRO[lv];
     const n = candidates(lv).length;
-    root.replaceChildren(el('<div class="stage"><h2>目前難度：' + esc(Mu.LEVELS[lv].name) + "</h2><p>可以在右上角換難度。現在有 " + n +
+    root.replaceChildren(el('<div class="stage"><h2>目前年級：' + esc(Mu.LEVELS[lv].name) + "</h2><p>可以在右上角換年級。現在有 " + n +
       ' 種昆蟲的成長照片可以排。</p><p><button class="btn primary big" id="go">開始排排站</button></p></div>'));
     root.querySelector("#go").onclick = () => play(lv);
   }

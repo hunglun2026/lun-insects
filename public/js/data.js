@@ -21,11 +21,11 @@
   };
   const INSECT_RULE = "昆蟲的身體分成頭、胸、腹三段，有 6 隻腳和一對觸角，很多種類有翅膀";
 
-  // ---- 三級難度。存在 localStorage，頁首可切換。物種的 lv 是「最早在哪個難度出現」（越常見越早） ----
+  // ---- 三個年級（跟動物探險家一樣：低、中、高年級）。低年級最簡單且有注音；高年級最難也只到原本的國中程度。存在 localStorage，頁首可切換。物種的 lv 是「最早在哪個難度出現」（越常見越早） ----
   const LEVELS = {
-    e: { name: "國小", choices: 3, rank: 0 },
-    j: { name: "國中", choices: 4, rank: 1 },
-    s: { name: "高中", choices: 4, rank: 2 },
+    e: { name: "低年級", choices: 3, rank: 0 },
+    j: { name: "中年級", choices: 3, rank: 1 },
+    s: { name: "高年級", choices: 4, rank: 1 },
   };
   const LKEY = "in-level";
   function level() {

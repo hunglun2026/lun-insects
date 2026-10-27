@@ -25,7 +25,7 @@ window.Progress = (function () {
     ["guess", "猜猜我是誰"], ["guess-timed", "猜我是誰・60 秒"], ["classify", "分類闖關"], ["classify-timed", "分類闖關・60 秒"],
     ["isinsect", "是不是昆蟲"],
   ];
-  const LV = { e: "國小", j: "國中", s: "高中" };
+  const LV = { e: "低年級", j: "中年級", s: "高年級" };
 
   // 小圖鑑的資料在 book.js（護照頁有載入）；沒載入的頁面不算這個徽章
   function bookDone() {
@@ -51,7 +51,7 @@ window.Progress = (function () {
       ["🧩", "分類達人", "分類闖關拿到三顆星", st("classify") >= 3],
       ["🕷️", "火眼金睛", "是不是昆蟲拿到三顆星", st("isinsect") >= 3],
       ["⚡", "閃電快手", "任一個 60 秒挑戰拿到三顆星", st("guess-timed") >= 3 || st("classify-timed") >= 3],
-      ["🎓", "高中挑戰者", "用高中難度在任一遊戲拿到三顆星", GAMES.some(([k]) => stLv(k, "s") >= 3)],
+      ["🎓", "高年級挑戰者", "用高年級在任一遊戲拿到三顆星", GAMES.some(([k]) => stLv(k, "s") >= 3)],
     ];
     return badge.map(([icon, name, how, got]) => ({ icon, name, how, got }));
   }

@@ -13,7 +13,7 @@ Mu.boot(function () {
       const pool = await Qgen.poolFor({ lv });
       return Qgen.make(pool, ["name"], n, lv).map((q) => {
         const r = Qgen.toRound(q);
-        if (lv === "s") {
+        if (lv === "__off__") {
           const sci = Object.fromEntries(pool.map((x) => [x.name, x.sci]));
           r.options.forEach((o) => (o.sub = sci[o.label] || ""));
         }
