@@ -35,11 +35,8 @@
   const foot = document.createElement("footer");
   foot.className = "foot";
   foot.innerHTML =
-    '<p>標本資料：農業部林業試驗所昆蟲標本館，經<a href="https://data.gov.tw/dataset/7278" target="_blank" rel="noopener">政府資料開放平臺</a>取得，依政府資料開放授權條款第 1 版使用。' +
-    '物種中文名與保育等級：<a href="https://taicol.tw/" target="_blank" rel="noopener">臺灣物種名錄 TaiCOL</a>（CC BY 4.0）。' +
-    '照片與每月觀察筆數：<a href="https://www.inaturalist.org/" target="_blank" rel="noopener">iNaturalist</a> 台灣研究級觀察，只用 CC0、CC BY、CC BY-SA 授權的照片，每張都標示作者，由本站縮小後存放。</p>' +
-    '<p id="data-stamp">資料載入中…</p>' +
-    "<p>鴻綸科技 製作。本站不是上述機關或網站製作。本站不蒐集任何個人資料，學習進度只存在這台裝置的瀏覽器裡。</p>";
+    "<p>由政府資料獲取</p>" +
+    '<p id="data-stamp" hidden></p>';
   wrap.appendChild(foot);
 
   // Mu.boot(fn)：載入 meta 後呼叫 fn(meta)，處理載入中與失敗畫面
