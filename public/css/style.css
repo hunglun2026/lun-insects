@@ -514,3 +514,5 @@ html[data-grade=low] .acard .info>b{line-height:1.9}
   html[data-grade=low] .acard .info{container-type:inline-size}
   html[data-grade=low] .acard .info>b{font-size:clamp(.8rem,calc(100cqw / (var(--n,5) * 1.95)),1.1rem)}
 }
+/* 標題平均換行，避免單字落單 */
+main h1,main h2,.stage h2{text-wrap:balance}
