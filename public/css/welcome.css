@@ -1,0 +1,126 @@
+/* 通用歡迎頁。顏色由 welcome-theme.css 的變數帶入，字型由 welcome-fonts.css（從站內字型子集抽出）帶入。
+   全部樣式都掛在 .wl 底下，不吃站內 style.css，所以套到任何一站都不會互相影響。 */
+.wl, .wl *, .wl *::before, .wl *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+.wl {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  color: var(--wl-ink);
+  background: var(--wl-paper);
+  font-family: var(--wl-font), "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
+}
+.wl a { color: inherit; text-decoration: none; }
+.wl img { max-width: 100%; display: block; }
+
+/* ---------- 背景：極光＋浮球＋顆粒 ---------- */
+.wl-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.wl-bg::before, .wl-bg::after {
+  content: ""; position: absolute; width: 80vmax; height: 80vmax; border-radius: 50%;
+  filter: blur(70px); opacity: .55; will-change: transform;
+}
+.wl-bg::before { left: -22vmax; top: -30vmax; background: radial-gradient(circle at 40% 40%, var(--wl-glow), transparent 62%); animation: wl-drift 24s ease-in-out infinite alternate; }
+.wl-bg::after { right: -26vmax; bottom: -34vmax; background: radial-gradient(circle at 55% 55%, var(--wl-accent-soft), transparent 62%); animation: wl-drift 30s ease-in-out -8s infinite alternate-reverse; }
+.wl-orb {
+  position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5;
+  background: radial-gradient(circle at 32% 30%, #fff 0, var(--wl-orb) 38%, transparent 70%);
+  transform: translate3d(calc(var(--px, 0) * var(--k, 20px)), calc(var(--py, 0) * var(--k, 20px)), 0);
+  transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+}
+.wl-o1 { --k: 36px; width: 14vmax; height: 14vmax; left: 8%; top: 22%; }
+.wl-o2 { --k: -28px; width: 9vmax; height: 9vmax; right: 12%; top: 16%; }
+.wl-o3 { --k: 22px; width: 11vmax; height: 11vmax; right: 18%; bottom: 14%; }
+.wl-o4 { --k: -40px; width: 7vmax; height: 7vmax; left: 16%; bottom: 18%; }
+.wl-grain { position: absolute; inset: 0; opacity: .5; background-image: radial-gradient(rgba(0, 0, 0, .05) 1px, transparent 1.2px); background-size: 4px 4px; mix-blend-mode: multiply; }
+
+/* ---------- 頁首 ---------- */
+.wl-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: min(1120px, 100% - 2rem); margin: 0 auto; padding: max(1rem, env(safe-area-inset-top)) 0 .5rem; }
+.wl-brand { display: inline-flex; align-items: center; gap: .6rem; font-weight: 800; font-size: 1.05rem; color: var(--wl-primary-ink); }
+.wl-brand img { width: 36px; height: 36px; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .25)); }
+.wl-nav { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+.wl-nav a { padding: .4rem .85rem; border-radius: 999px; font-weight: 700; font-size: .92rem; color: var(--wl-primary-ink); transition: background .2s; }
+.wl-nav a:hover, .wl-nav a:focus-visible { background: rgba(255, 255, 255, .7); }
+
+/* ---------- 主區 ---------- */
+.wl-main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: min(920px, 100% - 2rem); margin: 0 auto; padding: .8rem 0 1.2rem; }
+.wl-d0 { --i: 0; } .wl-d1 { --i: 1; } .wl-d2 { --i: 2; } .wl-d3 { --i: 3; } .wl-d4 { --i: 4; } .wl-d5 { --i: 5; } .wl-d6 { --i: 6; } .wl-d7 { --i: 7; } .wl-d8 { --i: 8; }
+.wl-in { animation: wl-up .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 90ms + 80ms); }
+
+.wl-logo-wrap { position: relative; width: clamp(104px, 16vw, 148px); aspect-ratio: 1; margin-bottom: .9rem; animation: wl-float 7s ease-in-out infinite; }
+.wl-ring { position: absolute; inset: -11px; padding: 3px; border-radius: 27%; background: conic-gradient(from var(--wl-a, 0deg), var(--wl-primary), var(--wl-accent), var(--wl-glow), var(--wl-primary)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); animation: wl-spin 12s linear infinite; opacity: .9; }
+.wl-logo-wrap::before { content: ""; position: absolute; inset: -22%; border-radius: 50%; background: radial-gradient(circle, var(--wl-glow) 0, transparent 66%); opacity: .6; filter: blur(14px); z-index: -1; }
+.wl-logo { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 16px 22px rgba(0, 0, 0, .3)); }
+
+.wl-kicker { display: inline-flex; align-items: center; gap: .55rem; margin: 0 0 .9rem; padding: .35rem 1rem; border-radius: 999px; font-size: .9rem; font-weight: 700; letter-spacing: .08em; color: var(--wl-primary-ink); background: rgba(255, 255, 255, .62); border: 1px solid rgba(255, 255, 255, .9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .18); }
+.wl-kicker i { width: 8px; height: 8px; border-radius: 50%; background: var(--wl-accent); box-shadow: 0 0 0 4px var(--wl-accent-soft); }
+.wl-greet { margin: 0 0 .15rem; font-weight: 700; color: var(--wl-muted); font-size: 1rem; }
+
+.wl-title { margin: 0; font-size: clamp(2.5rem, 7.4vw, 5rem); line-height: 1.08; font-weight: 900; letter-spacing: .03em; color: var(--wl-primary); background: linear-gradient(100deg, var(--wl-primary) 8%, var(--wl-accent) 92%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding: .05em .1em; }
+.wl-tag { margin: .9rem 0 0; max-width: 34em; font-size: clamp(1.05rem, 2.4vw, 1.35rem); color: var(--wl-muted); font-weight: 500; }
+
+.wl-stats { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin: 1.1rem 0 0; padding: 0; }
+.wl-stats li { min-width: 7.5rem; padding: .7rem 1.1rem; border-radius: 18px; background: rgba(255, 255, 255, .66); border: 1px solid rgba(255, 255, 255, .95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .3); }
+.wl-stats b { display: block; font-size: 1.75rem; line-height: 1.1; font-weight: 900; color: var(--wl-primary); font-variant-numeric: tabular-nums; }
+.wl-stats span { font-size: .88rem; font-weight: 600; color: var(--wl-muted); }
+
+.wl-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 1.4rem; }
+.wl-btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 54px; padding: .8rem 1.7rem; border-radius: 999px; font-weight: 800; font-size: 1.1rem; border: 2px solid transparent; cursor: pointer; transition: transform .2s cubic-bezier(.2, .8, .2, 1), box-shadow .2s; }
+.wl-btn:hover { transform: translateY(-2px); }
+.wl-btn:active { transform: translateY(0) scale(.98); }
+.wl .wl-btn-main { color: #fff; background: linear-gradient(135deg, var(--wl-primary), var(--wl-primary-2)); box-shadow: 0 14px 28px -10px var(--wl-primary), 0 2px 0 rgba(255, 255, 255, .25) inset; font-size: 1.2rem; padding-inline: 2.1rem; }
+.wl-btn-main::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent); transform: skewX(-18deg); animation: wl-shine 4.5s ease-in-out 1.6s infinite; }
+.wl .wl-btn-sub { color: var(--wl-primary-ink); background: rgba(255, 255, 255, .85); border-color: var(--wl-primary); }
+.wl .wl-btn-sub:hover { background: #fff; box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .35); }
+.wl a:focus-visible, .wl button:focus-visible { outline: 3px solid var(--wl-accent); outline-offset: 3px; }
+
+/* ---------- 選年級 ---------- */
+.wl-levels { margin-top: 1.3rem; }
+.wl-levels p { margin: 0 0 .55rem; font-size: .95rem; font-weight: 700; color: var(--wl-muted); }
+.wl-seg { display: inline-flex; gap: .3rem; padding: .3rem; border-radius: 999px; background: rgba(255, 255, 255, .72); border: 1px solid rgba(255, 255, 255, .95); box-shadow: 0 8px 20px -12px rgba(0, 0, 0, .35); flex-wrap: wrap; justify-content: center; }
+.wl-lv { min-height: 44px; padding: .45rem 1.15rem; border: 0; border-radius: 999px; font: inherit; font-weight: 800; font-size: 1rem; color: var(--wl-primary-ink); background: transparent; cursor: pointer; transition: background .2s, color .2s, transform .2s; }
+.wl-lv:hover { background: var(--wl-accent-soft); }
+.wl-lv[aria-pressed="true"] { color: #fff; background: linear-gradient(135deg, var(--wl-primary), var(--wl-primary-2)); box-shadow: 0 6px 14px -6px var(--wl-primary); transform: scale(1.04); }
+
+/* ---------- 頁尾 ---------- */
+.wl-foot { width: min(1120px, 100% - 2rem); margin: 0 auto; padding: 1rem 0 max(1.2rem, env(safe-area-inset-bottom)); display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; font-size: .85rem; color: var(--wl-muted); text-align: center; border-top: 1px solid rgba(0, 0, 0, .06); }
+.wl-foot a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- 動畫 ---------- */
+@keyframes wl-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes wl-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes wl-drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(6vmax, 4vmax, 0) scale(1.12); } }
+@keyframes wl-shine { 0%, 62% { left: -60%; } 100% { left: 130%; } }
+@property --wl-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes wl-spin { to { --wl-a: 360deg; } }
+
+@media (max-width: 560px) {
+  .wl-nav a { padding: .35rem .6rem; font-size: .85rem; }
+  .wl-btn { width: 100%; max-width: 20rem; }
+  .wl-stats li { min-width: 6.4rem; padding: .55rem .8rem; }
+}
+/* 矮螢幕（例如 1280×800 的筆電）：縮緊間距，讓整個歡迎頁一屏看完 */
+@media (min-width: 561px) and (max-height: 880px) {
+  .wl-logo-wrap { width: 118px; margin-bottom: .6rem; }
+  .wl-kicker { margin-bottom: .5rem; padding: .25rem .9rem; }
+  .wl-greet { font-size: .92rem; }
+  .wl-title { font-size: clamp(2.4rem, 6.2vw, 4rem); }
+  .wl-tag { margin-top: .5rem; font-size: 1.08rem; }
+  .wl-stats { margin-top: .8rem; }
+  .wl-stats li { padding: .5rem 1rem; }
+  .wl-stats b { font-size: 1.5rem; }
+  .wl-cta { margin-top: 1rem; }
+  .wl-btn { min-height: 48px; padding-block: .6rem; }
+  .wl-levels { margin-top: .9rem; }
+  .wl-levels p { margin-bottom: .35rem; }
+  .wl-foot { padding-block: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wl *, .wl *::before, .wl *::after, .wl-bg::before, .wl-bg::after { animation: none !important; transition: none !important; }
+  .wl-in { opacity: 1; }
+}

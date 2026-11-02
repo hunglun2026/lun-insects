@@ -11,7 +11,7 @@
   const CJK = new RegExp("[" + String.fromCharCode(0x3400) + "-" + String.fromCharCode(0x9fff) + "]"); // 中文字範圍（寫成數字，字型子集才不會把這兩個邊界字當成網站用字）
 
   function load() {
-    loading = loading || fetch("/js/zhuyin.json?v=23").then((r) => r.json()).then((d) => {
+    loading = loading || fetch("/js/zhuyin.json?v=24").then((r) => r.json()).then((d) => {
       data = d;
       data.maxW = Math.max(1, ...Object.keys(d.w).map((k) => k.length));
     }).catch(() => { loading = null; });

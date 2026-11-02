@@ -21,6 +21,6 @@
   "routes": [{ "pattern": "insects.hunglun.com", "custom_domain": true }],
   // 每月 1 日台灣 03:00（UTC 前一天 19:00）檢查 data.gov.tw 有沒有更新，有就 ntfy 通知（匯入在本機跑）
   "triggers": { "crons": ["0 19 1 * *"] },
-  "vars": { "APP_VERSION": "0.1.0" }
+  "vars": { "APP_VERSION": "0.1.1" }
   // secrets（wrangler secret put）：NTFY_TOPIC、ADMIN_TOKEN
 }
