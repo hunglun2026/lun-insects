@@ -1,0 +1,23 @@
+# 昆蟲探險家
+
+> 認識台灣的昆蟲，分辨牠們是哪一目，看看牠們幾月出現。
+
+鴻綸科技（https://www.hunglun.com/）製作的免費學習網站，免註冊、免安裝，收錄於官網學習專區 https://www.hunglun.com/tools/games 。
+
+## 頁面
+- [我的小圖鑑](https://insects.hunglun.com/book): 挑幾種喜歡的昆蟲，寫下觀察筆記，做成自己的小圖鑑，可以列印或投影發表。
+- [分類闖關](https://insects.hunglun.com/classify): 看昆蟲照片，分出甲蟲、蝴蝶和蛾、蜂和螞蟻、蜻蜓等不同的目。三種難度，還有 60 秒挑戰。
+- [猜猜我是誰](https://insects.hunglun.com/guess): 看台灣昆蟲的照片，猜猜牠叫什麼名字。國小、國中、高中三種難度，還有 60 秒挑戰。
+- [使用說明](https://insects.hunglun.com/help): 昆蟲探險家使用說明：老師 3 分鐘上手、三種上課方式、三種難度的差別、每個工具怎麼用、學習單與搶答計分板、學生與家長、資料來源與常見問題。
+- [昆蟲探險家](https://insects.hunglun.com/home): 用林業試驗所昆蟲標本館開放資料、臺灣物種名錄與 iNaturalist 觀察照片做的教學網站：認識台灣常見昆蟲、猜名字、分類闖關、變態排排站、標本館探究、印學習單。國小低中高年級三種難度，免註冊、免安裝。
+- [昆蟲探險家](https://insects.hunglun.com/): 認識台灣的昆蟲，分辨牠們是哪一目，看看牠們幾月出現。
+- [是不是昆蟲](https://insects.hunglun.com/isinsect): 蜘蛛、蜈蚣、馬陸是昆蟲嗎？看照片判斷，學會分辨昆蟲的方法。
+- [翻牌配對](https://insects.hunglun.com/memory): 把台灣昆蟲的照片和名字配成一對，國小 6 對、國中與高中 8 對。
+- [幾月看得到](https://insects.hunglun.com/months): 用 iNaturalist 台灣觀察紀錄看每個月最常見到哪些昆蟲，規劃戶外觀察。
+- [標本館探究](https://insects.hunglun.com/museum): 用林業試驗所昆蟲標本館 14.8 萬筆標本紀錄做探究：在哪裡採集、哪個年代、哪些昆蟲最多。
+- [資料開放宣告](https://insects.hunglun.com/open-data): 昆蟲探險家的資料來源、授權方式與著作權說明。
+- [探險護照](https://insects.hunglun.com/passport): 看過的昆蟲會蓋章，玩遊戲拿星星換徽章。
+- [搜尋](https://insects.hunglun.com/search): 用中文名、台語名、學名搜尋台灣昆蟲，也能查林業試驗所昆蟲標本館的 14.8 萬筆標本紀錄。
+- [昆蟲小百科](https://insects.hunglun.com/sp): 台灣常見昆蟲的照片、中文名、台語名、分類、幾月看得到、是不是特有種或保育類，國小、國中附白話介紹。
+- [變態排排站](https://insects.hunglun.com/stages): 把昆蟲的卵、幼蟲、蛹、成蟲照片依順序排好，分辨完全變態與不完全變態。
+- [教師專區](https://insects.hunglun.com/teacher): 一鍵產生可列印的昆蟲學習單與答案、投影出題、全班搶答計分板與倒數計時器。國小、國中、高中三種難度。
